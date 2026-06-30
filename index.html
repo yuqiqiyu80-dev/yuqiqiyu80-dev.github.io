@@ -317,6 +317,13 @@
             opacity:0.6;
             font-size:14px;
         }
+        .cmd-desc{
+            margin-top:15px;
+            padding:16px;
+            background:rgba(0,0,0,0.25);
+            border-radius:10px;
+            border-left:3px solid #2e86ab;
+        }
     </style>
 </head>
 <body>
@@ -357,7 +364,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>IP&域名解析查询</span>
         </a>
-        <a href="http://填写你的服务器地址:8123" target="_blank" class="func-btn">
+        <a href="http://110.42.111.232:8123/" target="_blank" class="func-btn">
             <i class="fa-solid fa-map-location-dot"></i>
             <span>Dynmap世界全景地图</span>
         </a>
@@ -380,6 +387,10 @@
             <div class="card-icon" style="background-image:url('./img/card_2.png')"></div>
             <h3>多世界独立管控</h3>
             <p style="margin:15px 0;line-height:1.8">适配1.5.2可用MultiWorld多世界插件，主城、生存、资源、冒险世界互相隔离，单独开关生物刷新</p>
+            <div class="cmd-desc">
+                <p>跨世界传送通用指令：<strong>/goto 世界名称</strong></p>
+                <p>可用世界：Lobby、Main、Resource、Adventure</p>
+            </div>
             <button class="btn-primary" style="margin-top:10px">浏览全部世界</button>
         </div>
         <div class="server-card">
@@ -394,13 +405,14 @@
 <section class="section-box">
     <div class="section-head">
         <h2>四大游玩分区世界</h2>
-        <p>适配1.5.2地形生成，各自独立刷新规则与权限设置</p>
+        <p>适配1.5.2地形生成，各自独立刷新规则与权限设置，输入/goto即可自由穿梭各个世界</p>
     </div>
     <div class="world-item">
         <div class="world-avatar"></div>
         <div>
             <h3>Lobby 主城大厅</h3>
             <p>彻底关闭动植物、怪物刷新，作为传送枢纽、公告展示、玩家休闲广场</p>
+            <p style="margin-top:8px;color:#87ceeb">传送指令：/goto Lobby</p>
         </div>
     </div>
     <div class="world-item">
@@ -408,6 +420,7 @@
         <div>
             <h3>Main 原生生存世界</h3>
             <p>1.5.2自然原版地形，正常生成生物与结构，玩家建造定居核心区域</p>
+            <p style="margin-top:8px;color:#87ceeb">传送指令：/goto Main</p>
         </div>
     </div>
     <div class="world-item">
@@ -415,6 +428,7 @@
         <div>
             <h3>Resource 资源挖矿世界</h3>
             <p>周期性重置地图，专供挖矿、砍伐、收集物资，保护生存世界建筑不被破坏</p>
+            <p style="margin-top:8px;color:#87ceeb">传送指令：/goto Resource</p>
         </div>
     </div>
     <div class="world-item">
@@ -422,6 +436,7 @@
         <div>
             <h3>Adventure 探险秘境世界</h3>
             <p>高密度敌对生物生成，1.5.2专属地牢遗迹，打怪掉落稀有道具装备</p>
+            <p style="margin-top:8px;color:#87ceeb">传送指令：/goto Adventure</p>
         </div>
     </div>
 </section>
@@ -446,7 +461,7 @@
         </div>
         <div>
             <h4>快速导航通道</h4>
-            <p style="margin:12px 0 8px">Dynmap实时方块地图</p>
+            <p style="margin:12px 0 8px"><a href="http://110.42.111.232:8123/" style="color:#94c8ff;text-decoration:none">Dynmap实时方块地图</a></p>
             <p style="margin:8px 0">1.5.2进服配置教程</p>
             <p style="margin:8px 0">服务器管理条例</p>
         </div>
@@ -458,6 +473,7 @@
     </div>
     <div class="copyright-text">
         © 2026 EchoLand | Minecraft 1.5.2 Server | 域名 ofcraft.nb666.ink
+        <br>多世界穿梭指令：/goto Lobby / Main / Resource / Adventure
     </div>
 </footer>
 
