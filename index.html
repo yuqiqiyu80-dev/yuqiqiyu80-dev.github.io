@@ -340,7 +340,8 @@
             <div class="nav-item">首页主页</div>
             <div class="nav-item">服务器概况</div>
             <div class="nav-item">多世界玩法</div>
-            <div class="nav-item">Dynmap在线地图</div>
+            <!-- 导航地图链接，独立跳转，不触发查询弹窗 -->
+            <a href="http://110.42.111.232:8123/" target="_blank" class="nav-item" style="text-decoration:none;color:inherit;">Dynmap在线地图</a>
             <div class="nav-item">公告规章制度</div>
             <div class="nav-item">管理联系方式</div>
         </nav>
@@ -356,14 +357,17 @@
         MultiWorld多世界分区 | Jobs职业插件 | Dynmap全景方块地图
     </p>
     <div class="button-group">
+        <!-- QQ群 -->
         <a href="https://qm.qq.com/cgi-bin/qm/qr?替换成你的QQ群链接" target="_blank" class="func-btn">
             <i class="fa-brands fa-qq"></i>
             <span>官方QQ交流群</span>
         </a>
-        <a href="https://www.ip138.com/" target="_blank" class="func-btn" id="openQuery">
+        <!-- IP查询按钮（仅这个会弹出输入框弹窗） -->
+        <a href="javascript:;" class="func-btn" id="openQuery">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>IP&域名解析查询</span>
         </a>
+        <!-- Dynmap地图按钮【修复点】完整http地址，target="_blank"新开页面，不会触发弹窗 -->
         <a href="http://110.42.111.232:8123/" target="_blank" class="func-btn">
             <i class="fa-solid fa-map-location-dot"></i>
             <span>Dynmap世界全景地图</span>
@@ -390,6 +394,7 @@
             <div class="cmd-desc">
                 <p>跨世界传送通用指令：<strong>/goto 世界名称</strong></p>
                 <p>可用世界：Lobby、Main、Resource、Adventure</p>
+                <p>示例：/goto Lobby 直达主城；/goto Adventure 进入探险秘境</p>
             </div>
             <button class="btn-primary" style="margin-top:10px">浏览全部世界</button>
         </div>
@@ -441,6 +446,7 @@
     </div>
 </section>
 
+<!-- 仅IP查询弹窗，地图按钮完全不关联这个弹窗 -->
 <div class="mask-layer" id="queryMask">
     <div class="query-popup">
         <h3>域名/服务器IP检测查询</h3>
@@ -461,7 +467,10 @@
         </div>
         <div>
             <h4>快速导航通道</h4>
-            <p style="margin:12px 0 8px"><a href="http://110.42.111.232:8123/" style="color:#94c8ff;text-decoration:none">Dynmap实时方块地图</a></p>
+            <!-- 页脚地图链接，独立跳转 -->
+            <p style="margin:12px 0 8px">
+                <a href="http://110.42.111.232:8123/" target="_blank" style="color:#94c8ff;text-decoration:none">Dynmap实时方块地图</a>
+            </p>
             <p style="margin:8px 0">1.5.2进服配置教程</p>
             <p style="margin:8px 0">服务器管理条例</p>
         </div>
@@ -478,6 +487,7 @@
 </footer>
 
 <script>
+// 仅【IP查询按钮】会弹出输入框弹窗，地图按钮无关联
 const openBtn = document.getElementById('openQuery');
 const mask = document.getElementById('queryMask');
 const closeBtn = document.getElementById('closeMask');
@@ -486,6 +496,7 @@ closeBtn.onclick = ()=> mask.style.display = 'none';
 mask.onclick = (e)=>{
     if(e.target === mask) mask.style.display = 'none';
 }
+// 全局按钮按压动效
 document.querySelectorAll('button,a.func-btn,.nav-item,.server-card,.world-item').forEach(el=>{
     el.addEventListener('mousedown',()=>el.style.transform='scale(0.96)');
     el.addEventListener('mouseup',()=>el.style.transform='');
